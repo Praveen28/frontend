@@ -14,7 +14,7 @@ class ResetPassword extends React.Component {
       alert("Enter emailid");
     }
     axios
-      .post("/organic/reset", { emailid: this.state.emailid })
+      .post(`${URL}/organic/reset`, { emailid: this.state.emailid })
       .then((res) => alert(res.data))
       .catch((err) => console.log(err));
   };

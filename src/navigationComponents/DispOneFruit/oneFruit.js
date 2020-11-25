@@ -16,6 +16,7 @@ import {
 import "./oneFruit.css";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import URL from "../../config";
 
 class OneFruit extends React.Component {
   state = {
@@ -31,7 +32,7 @@ class OneFruit extends React.Component {
   componentDidMount() {
     this.setState({ loading: true });
     axios
-      .get(`/organic/getfruits/onefruit/${this.props.match.params.id}`)
+      .get(`${URL}/organic/getfruits/onefruit/${this.props.match.params.id}`)
       .then((res) => {
         setTimeout(() => {
           this.setState({
@@ -43,7 +44,7 @@ class OneFruit extends React.Component {
       })
       .catch((err) => console.log(err));
     axios
-      .get("/organic/getfruits")
+      .get(`${URL}/organic/getfruits`)
       .then((res) => this.setState({ fruits: res.data }))
       .catch((err) => console.log(err));
   }
@@ -69,7 +70,7 @@ class OneFruit extends React.Component {
         user_id: JSON.parse(value).id,
       };
       axios
-        .post("/organic/cart/addCart", data1)
+        .post(`${URL}/organic/cart/addCart`, data1)
         .then((res) => {
           setTimeout(() => {
             this.setState({ loading: false, visible: false });

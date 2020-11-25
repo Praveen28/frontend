@@ -12,6 +12,7 @@ import {
   TextField,
 } from "@material-ui/core";
 import axios from "axios";
+import URL from "../../config";
 
 class Updatefruit extends React.Component {
   state = {
@@ -27,7 +28,7 @@ class Updatefruit extends React.Component {
 
   componentDidMount() {
     axios
-      .get("/organic/updatefruit")
+      .get(`${URL}/organic/updatefruit`)
       .then((res) => this.setState({ updatefruit_fetch: res.data }))
       .catch((err) => console.log(err));
   }
@@ -66,7 +67,7 @@ class Updatefruit extends React.Component {
       formdata.append("description", this.state.description);
       formdata.append("image", this.state.image);
       axios
-        .post("/organic/updatefruit/update", formdata)
+        .post(`${URL}/organic/updatefruit/update`, formdata)
         .then((res) => {
           alert(res.data);
           window.location.reload(false);
@@ -78,7 +79,7 @@ class Updatefruit extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <AppBar position="static" color="secondary">
+        <AppBar position='static' color='secondary'>
           <Toolbar>
             <Typography
               style={{
@@ -87,11 +88,10 @@ class Updatefruit extends React.Component {
                 fontSize: "1.2rem",
                 flexGrow: 1,
                 color: "white",
-              }}
-            >
+              }}>
               ORGANIC FARMING
             </Typography>
-            <Button variant="contained" color="secondary">
+            <Button variant='contained' color='secondary'>
               SIGN OUT
             </Button>
           </Toolbar>
@@ -100,12 +100,12 @@ class Updatefruit extends React.Component {
           <TableHead>
             <TableRow>
               <TableCell>S.NO</TableCell>
-              <TableCell align="center">NAME</TableCell>
-              <TableCell align="center">PRICE</TableCell>
-              <TableCell align="center">QUANTITY</TableCell>
-              <TableCell align="center">DESCRIPTION</TableCell>
-              <TableCell align="center">IMAGE</TableCell>
-              <TableCell align="center">EDIT</TableCell>
+              <TableCell align='center'>NAME</TableCell>
+              <TableCell align='center'>PRICE</TableCell>
+              <TableCell align='center'>QUANTITY</TableCell>
+              <TableCell align='center'>DESCRIPTION</TableCell>
+              <TableCell align='center'>IMAGE</TableCell>
+              <TableCell align='center'>EDIT</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -116,33 +116,32 @@ class Updatefruit extends React.Component {
                     <TableCell>
                       <Typography>{index + 1} </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <Typography>{item.fruitname} </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <Typography>{item.fruitprice} </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <Typography>{item.fruitquantity} </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <Typography>{item.fruitdescription} </Typography>
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <img
                         alt={item.fruitname}
-                        width="100"
-                        height="50"
+                        width='100'
+                        height='50'
                         src={"data:image/*;base64," + item.fruitimage}
                       />
                     </TableCell>
-                    <TableCell align="center">
+                    <TableCell align='center'>
                       <Button
-                        color="primary"
-                        variant="contained"
+                        color='primary'
+                        variant='contained'
                         value={item}
-                        onClick={(e) => this.handleEdit(e, item)}
-                      >
+                        onClick={(e) => this.handleEdit(e, item)}>
                         EDIT
                       </Button>
                     </TableCell>
@@ -154,41 +153,41 @@ class Updatefruit extends React.Component {
                 <TableCell>
                   <Typography>1</Typography>
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <TextField
-                    variant="outlined"
+                    variant='outlined'
                     value={this.state.name}
-                    label="Fruit name"
+                    label='Fruit name'
                     onChange={(e) =>
                       this.setState({ name: e.currentTarget.value })
                     }
                   />
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <TextField
-                    variant="outlined"
+                    variant='outlined'
                     value={this.state.price}
-                    label="Fruit price"
+                    label='Fruit price'
                     onChange={(e) =>
                       this.setState({ price: e.currentTarget.value })
                     }
                   />
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <TextField
-                    variant="outlined"
+                    variant='outlined'
                     value={this.state.quantity}
-                    label="Fruit quantity"
+                    label='Fruit quantity'
                     onChange={(e) =>
                       this.setState({ quantity: e.currentTarget.value })
                     }
                   />
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <TextField
-                    variant="outlined"
+                    variant='outlined'
                     value={this.state.description}
-                    label="Fruit description"
+                    label='Fruit description'
                     onChange={(e) =>
                       this.setState({
                         description: e.currentTarget.value,
@@ -196,22 +195,21 @@ class Updatefruit extends React.Component {
                     }
                   />
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <input
-                    type="file"
-                    accept="image/*"
+                    type='file'
+                    accept='image/*'
                     onChange={(e) =>
                       this.setState({ image: e.target.files[0] })
                     }
                   />
                 </TableCell>
-                <TableCell align="center">
+                <TableCell align='center'>
                   <Button
-                    variant="contained"
-                    color="secondary"
+                    variant='contained'
+                    color='secondary'
                     value={this.state.id}
-                    onClick={() => this.handleUpdate()}
-                  >
+                    onClick={() => this.handleUpdate()}>
                     UPDATE
                   </Button>
                 </TableCell>

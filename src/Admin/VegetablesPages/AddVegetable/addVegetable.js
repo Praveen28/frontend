@@ -16,6 +16,8 @@ import {
 import "./addVegetable.css";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import URL from "../../config";
+
 
 class addVegetable extends React.Component {
   state = {
@@ -62,7 +64,7 @@ class addVegetable extends React.Component {
     } else {
       this.setState({ loading: true });
       axios
-        .post("/organic/addVegetable", add_veg)
+        .post(`${URL}/organic/addVegetable`, add_veg)
         .then((res) => {
           setTimeout(() => {
             this.setState({

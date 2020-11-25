@@ -8,6 +8,8 @@ import {
 } from "@material-ui/core";
 import AppBar from "../../components/AppBar/AppBar";
 import "./allFruits.css";
+import URL from "../../config"
+
 import axios from "axios";
 
 class AllFruits extends React.Component {
@@ -18,7 +20,7 @@ class AllFruits extends React.Component {
   componentDidMount() {
     this.setState({ loading: true });
     axios
-      .get("/organic/getfruits")
+      .get(`${URL}/organic/getfruits`)
       .then((res) => {
         setTimeout(() => {
           this.setState({ loading: false, data: res.data });

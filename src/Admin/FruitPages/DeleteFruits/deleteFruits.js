@@ -12,6 +12,8 @@ import {
 } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 import axios from "axios";
+import URL from "../../config";
+
 
 class Deletefruits extends React.Component {
   state = {
@@ -19,7 +21,7 @@ class Deletefruits extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("/organic/deletefruit")
+      .get(`${URL}/organic/deletefruit`)
       .then((res) => this.setState({ data: res.data }))
       .catch((err) => console.log(err));
   }
@@ -28,7 +30,7 @@ class Deletefruits extends React.Component {
     if (window.confirm("Are you sure to delete")) {
       const value = { id: item._id };
       axios
-        .post("/organic/deletefruit/delete", value)
+        .post(`${URL}/organic/deletefruit/delete`, value)
         .then((res) => {
           alert(res.data);
           window.location.reload(false);

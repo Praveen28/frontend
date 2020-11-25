@@ -13,6 +13,7 @@ import "./orderPage.css";
 
 import AppBar from "../../components/AppBar/AppBar";
 import axios from "axios";
+import URL from "../../config";
 
 class Order extends React.Component {
   state = {
@@ -47,7 +48,7 @@ class Order extends React.Component {
         id: JSON.parse(login).id,
       };
       axios
-        .post("/organic/getOrderDetails", id)
+        .post(`${URL}/organic/getOrderDetails`, id)
         .then((res) =>
           setTimeout(() => {
             this.setState({
@@ -100,7 +101,7 @@ class Order extends React.Component {
         id: JSON.parse(login).id,
       };
       axios
-        .post("/organic/login/updateuser", user_details)
+        .post(`${URL}/organic/login/updateuser`, user_details)
         .then((res) => {
           setTimeout(() => {
             this.setState({
@@ -123,7 +124,7 @@ class Order extends React.Component {
     };
     this.setState({ loading: true });
     axios
-      .post("/organic/order", data1)
+      .post(`${URL}/organic/order`, data1)
       .then((res) => {
         setTimeout(() => {
           this.setState({ loading: false });

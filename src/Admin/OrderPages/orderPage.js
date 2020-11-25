@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import "./orderPage.css";
 import axios from "axios";
+import URL from "../../config";
+
 
 class OrderPage extends React.Component {
   state = {
@@ -27,7 +29,7 @@ class OrderPage extends React.Component {
       this.props.history.push("/login");
     } else {
       axios
-        .get("/organic/vieworder")
+        .get(`${URL}/organic/vieworder`)
         .then((res) => {
           this.setState({ orders: res.data });
           console.log(res.data);
@@ -62,7 +64,7 @@ class OrderPage extends React.Component {
       date: this.d(),
     };
     axios
-      .post("/organic/vieworder/updateDelievery", data1)
+      .post(`${URL}/organic/vieworder/updateDelievery`, data1)
       .then((res) => alert(res.data))
       .catch((err) => console.log(err));
   };

@@ -10,6 +10,7 @@ import {
 import "./VegetablePage.css";
 import axios from "axios";
 import { withRouter } from "react-router-dom";
+import URL from "../../config";
 
 class VegetableContainer extends React.Component {
   state = {
@@ -19,7 +20,7 @@ class VegetableContainer extends React.Component {
   componentDidMount() {
     this.setState({ loading: true });
     axios
-      .get("/organic/getVegetables")
+      .get(`${URL}/organic/getVegetables`)
       .then((res) =>
         setTimeout(() => {
           this.setState({ loading: false, data: res.data });
@@ -55,7 +56,7 @@ class VegetableContainer extends React.Component {
               </Toolbar>
               <hr />
               <div className='flex_veg'>
-                {this.state.data.slice(0,5).map((item, index) => {
+                {this.state.data.slice(0, 5).map((item, index) => {
                   return (
                     <div
                       key={index}

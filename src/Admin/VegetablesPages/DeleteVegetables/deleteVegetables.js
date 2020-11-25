@@ -13,6 +13,8 @@ import {
 import { Delete } from "@material-ui/icons";
 import "./deleteVegetables.css";
 import axios from "axios";
+import URL from "../../config";
+
 
 class DeleteVegetables extends React.Component {
   state = {
@@ -20,7 +22,7 @@ class DeleteVegetables extends React.Component {
   };
   componentDidMount() {
     axios
-      .get("/organic/deleteVegetable")
+      .get(`${URL}/organic/deleteVegetable`)
       .then((res) => this.setState({ data: res.data }))
       .catch((err) => console.log(err));
   }
@@ -29,7 +31,7 @@ class DeleteVegetables extends React.Component {
     if (window.confirm("Are you sure to delete")) {
       const value = { id: item._id };
       axios
-        .post("/organic/deleteVegetable/delete", value)
+        .post(`${URL}/organic/deleteVegetable/delete`, value)
         .then((res) => {
           alert(res.data);
           window.location.reload(false);

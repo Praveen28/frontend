@@ -17,6 +17,8 @@ import {
 } from "@material-ui/core";
 import "./updateVegetable.css";
 import axios from "axios";
+import URL from "../../config";
+
 
 class UpdateVegetable extends React.Component {
   state = {
@@ -34,7 +36,7 @@ class UpdateVegetable extends React.Component {
 
   componentDidMount() {
     axios
-      .get("/organic/updateVegetable")
+      .get(`${URL}/organic/updateVegetable`)
       .then((res) => this.setState({ updateVegetable_fetch: res.data }))
       .catch((err) => console.log(err));
   }
@@ -84,7 +86,7 @@ class UpdateVegetable extends React.Component {
         veg_image: this.state.image,
       };
       axios
-        .post("/organic/updateVegetable/update", update_veg)
+        .post(`${URL}/organic/updateVegetable/update`, update_veg)
         .then((res) => {
           alert(res.data);
           window.location.reload(false);

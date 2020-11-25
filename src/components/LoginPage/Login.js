@@ -70,7 +70,7 @@ class Login extends React.Component {
       alert("Fill all the details");
     } else {
       this.setState({ loading: true });
-      axios.post("/organic/login", login).then((res) => {
+      axios.post(`${URL}/organic/login`, login).then((res) => {
         setTimeout(() => {
           this.setState({
             loading: false,
@@ -137,7 +137,7 @@ class Login extends React.Component {
       alert("Pincode is not in correct format");
       document.getElementById("pincode").focus();
     } else {
-      axios.post("/organic/login/adduser", data).then((res) => {
+      axios.post(`${URL}/organic/login/adduser`, data).then((res) => {
         alert(res.data);
         window.location.reload(false);
       });

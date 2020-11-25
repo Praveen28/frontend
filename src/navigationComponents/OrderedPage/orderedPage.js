@@ -10,6 +10,7 @@ import {
 import axios from "axios";
 import AppBar from "../../components/AppBar/AppBar";
 import "./orderedPage.css";
+import URL from "../../config";
 
 class OrderedPage extends React.Component {
   state = {
@@ -28,7 +29,7 @@ class OrderedPage extends React.Component {
         id: JSON.parse(login).id,
       };
       axios
-        .post("/organic/getOrderDetails/get-order", id)
+        .post(`${URL}/organic/getOrderDetails/get-order`, id)
         .then((res) => {
           setTimeout(() => {
             this.setState({
@@ -56,7 +57,7 @@ class OrderedPage extends React.Component {
     const login = localStorage.getItem("loggedin");
     if (window.confirm("Delete the order")) {
       axios
-        .post("/organic/cancelOrder", {
+        .post(`${URL}/organic/cancelOrder`, {
           id: JSON.parse(login).id,
           item_id: index,
         })

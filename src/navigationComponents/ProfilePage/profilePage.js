@@ -58,7 +58,7 @@ class ProfilePage extends React.Component {
         id: JSON.parse(login).id,
       };
       axios
-        .post("/organic/login/getuser", id)
+        .post(`${URL}/organic/login/getuser`, id)
         .then((res) => {
           setTimeout(() => {
             this.setState({
@@ -102,7 +102,7 @@ class ProfilePage extends React.Component {
         mobilenumber: this.state.mobilenumber,
       };
       axios
-        .post("/organic/update/profileupdate", data)
+        .post(`${URL}/organic/update/profileupdate`, data)
         .then((res) => {
           setTimeout(() => {
             this.setState({ loading: false, profileedit: false });
@@ -124,7 +124,7 @@ class ProfilePage extends React.Component {
         password: this.state.password,
       };
       axios
-        .post("/organic/update/deleteprofile", data)
+        .post(`${URL}/organic/update/deleteprofile`, data)
         .then((res) => {
           setTimeout(() => {
             this.setState({ loading: false });
@@ -166,7 +166,7 @@ class ProfilePage extends React.Component {
         landmark: this.state.landmark,
       };
       axios
-        .post("/organic/update/updateaddress", data)
+        .post(`${URL}/organic/update/updateaddress`, data)
         .then((Res) => {
           setTimeout(() => {
             this.setState({ loading: false, addressedit: false });

@@ -3,6 +3,8 @@ import { Button, Paper, TextField, Typography } from "@material-ui/core";
 import AppBar from "../../components/AppBar/AppBar";
 import axios from "axios";
 import "./newPassword.css";
+import URL from "../../config";
+
 
 class NewPassword extends React.Component {
   state = {
@@ -10,7 +12,7 @@ class NewPassword extends React.Component {
   };
   newPassword = () => {
     axios
-      .post("/organic/reset/new-password", {
+      .post(`${URL}/organic/reset/new-password`, {
         token: this.props.match.params.token,
         newpassword: this.state.newpassword,
       })

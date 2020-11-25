@@ -11,6 +11,7 @@ import {
 } from "@material-ui/core";
 import axios from "axios";
 import "./cart.css";
+import URL from "../../config"
 
 class Cart extends React.Component {
   state = {
@@ -28,7 +29,7 @@ class Cart extends React.Component {
         id: JSON.parse(login).id,
       };
       axios
-        .post("/organic/cart/getCart", id)
+        .post(`${URL}/organic/cart/getCart`, id)
         .then((res) => {
           setTimeout(() => {
             this.setState({ cart: res.data, loading: false });
@@ -54,7 +55,7 @@ class Cart extends React.Component {
     this.setState({ loading: true });
     const login = localStorage.getItem("loggedin");
     axios
-      .post("/organic/cart/removeItem", {
+      .post(`${URL}/organic/cart/removeItem`, {
         id: index,
         userid: JSON.parse(login).id,
       })

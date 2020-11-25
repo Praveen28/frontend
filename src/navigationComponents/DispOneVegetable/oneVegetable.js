@@ -16,6 +16,8 @@ import {
 import "./oneVegetable.css";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import URL from "../../config";
+
 
 class OneVegetable extends React.Component {
   state = {
@@ -31,7 +33,7 @@ class OneVegetable extends React.Component {
   componentDidMount() {
     this.setState({ loading: true });
     axios
-      .get(`/organic/getVegetables/onevegetable/${this.props.match.params.id}`)
+      .get(`${URL}/organic/getVegetables/onevegetable/${this.props.match.params.id}`)
       .then((res) => {
         setTimeout(() => {
           if (res.data === "error") {
@@ -48,7 +50,7 @@ class OneVegetable extends React.Component {
       })
       .catch((err) => console.log(err));
     axios
-      .get("/organic/getVegetables")
+      .get(`${URL}/organic/getVegetables`)
       .then((res) => this.setState({ vegetables: res.data }))
       .catch((err) => console.log(err));
   }
@@ -74,7 +76,7 @@ class OneVegetable extends React.Component {
         user_id: JSON.parse(value).id,
       };
       axios
-        .post("/organic/cart/addCart", data1)
+        .post(`${URL}/organic/cart/addCart`, data1)
         .then((res) => {
           setTimeout(() => {
             this.setState({ loading: false, visible: false });

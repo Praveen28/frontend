@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import URL from "../../config";
+
 
 class addFruits extends React.Component {
   state = {
@@ -55,7 +57,7 @@ class addFruits extends React.Component {
       formdata.append("image", add_fruits.fruit_image);
       this.setState({ loading: true });
       axios
-        .post("/organic/addfruit", formdata)
+        .post(`${URL}/organic/addfruit`, formdata)
         .then((res) => {
           setTimeout(() => {
             this.setState({

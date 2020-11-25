@@ -9,6 +9,8 @@ import {
 import AppBar from "../../components/AppBar/AppBar";
 import "./allVegetables.css";
 import axios from "axios";
+import URL from "../../config"
+
 
 class AllVegetables extends React.Component {
   state = {
@@ -18,7 +20,7 @@ class AllVegetables extends React.Component {
   componentDidMount() {
     this.setState({ loading: true });
     axios
-      .get("/organic/getVegetables")
+      .get(`${URL}/organic/getVegetables`)
       .then((res) => {
         setTimeout(() => {
           this.setState({ loading: false, data: res.data });
