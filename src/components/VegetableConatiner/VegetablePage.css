@@ -1,0 +1,50 @@
+.veg_title {
+  margin-left: 1% !important;
+  font-size: 1.3rem !important;
+  letter-spacing: 0.1em !important;
+  flex-grow: 1;
+}
+
+.flex_veg {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  list-style: none !important;
+  justify-content: space-around;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.vegetable_paper {
+  margin: 1%;
+  max-width: 250px;
+  cursor: pointer;
+  border: none !important;
+}
+
+.vegetable_name {
+  text-align: center;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.1em !important;
+  font-family: "Times New Roman";
+}
+
+.vegetable_image {
+  display: block;
+  margin-left: auto;
+  margin-top: auto;
+  width: 100%;
+  height: 20vh;
+  transition: 0.2s ease-out;
+  text-decoration: none;
+}
+.vegetable_image:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 750px) {
+  .vegetable_paper {
+    margin: 1%;
+    max-width: 150px;
+    cursor: pointer;
+    border: none !important;
+  }
+}

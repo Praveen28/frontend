@@ -1,0 +1,6 @@
+.delete_title {
+  text-align: center;
+  flex-grow: 1;
+  letter-spacing: 0.2em !important;
+  font-size: 1.2rem !important;
+}

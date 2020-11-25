@@ -1,0 +1,10 @@
+.admin_vegetables {
+  width: 100%;
+  height: 30vh;
+}
+
+.admin_section {
+  text-align: center;
+  font-size: 1.5rem !important;
+  letter-spacing: 0.2em !important;
+}

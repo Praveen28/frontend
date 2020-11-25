@@ -1,0 +1,76 @@
+.appbar_style {
+  background-color: #327210 !important;
+}
+
+.appbar__title {
+  cursor: pointer;
+  flex-grow: 1;
+  letter-spacing: 0.2em !important;
+}
+
+.hamburger_button {
+  display: flex !important;
+}
+
+.appbar_buttons {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+.appbar_list_buttons {
+  display: flex;
+}
+
+.dropbtn {
+  position: relative;
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropbtn:hover .dropdown-content {
+  display: block;
+}
+
+.products_image {
+  width: 100%;
+  height: 25vh;
+}
+
+.products_title {
+  font-size: 1.3rem !important;
+  text-align: center !important;
+}
+
+@media (max-width: 650px) {
+  .appbar_list_buttons {
+    display: none;
+  }
+}
+
+@media (min-width: 649px) {
+  .hamburger_button {
+    display: none !important;
+  }
+}

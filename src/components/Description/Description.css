@@ -1,0 +1,18 @@
+.description_div {
+  position: relative;
+}
+
+.description_image {
+  height: 60vh;
+  width: 100vw;
+}
+
+.description_title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  /* letter-spacing: 0.2em !important; */
+  font-size: 2rem !important;
+}

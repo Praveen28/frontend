@@ -1,0 +1,28 @@
+.profile_avatar {
+  margin: 2% !important;
+  height: 50px !important;
+  width: 50px !important;
+}
+
+.profile_modal {
+  outline: 0 !important;
+  width: 60%;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.profileinfo_image {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .profile_modal {
+    outline: 0 !important;
+    width: 60%;
+    overflow: scroll !important;
+    height: 100%;
+  }
+}
