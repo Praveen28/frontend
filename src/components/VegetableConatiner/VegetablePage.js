@@ -63,7 +63,7 @@ class VegetableContainer extends React.Component {
                       onClick={() => this.props.history.push("/allvegetables")}>
                       <img
                         alt={item.vegetablename}
-                        src={"data:image/*;base64," + item.vegetableimage}
+                        src={item.vegetableimage}
                         className='vegetable_image'
                       />
                       <br />
