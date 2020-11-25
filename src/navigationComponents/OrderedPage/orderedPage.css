@@ -1,0 +1,17 @@
+.ordered_image {
+  width: 150px;
+  height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ordered_paper {
+  padding: 1% !important;
+}
+
+.ordered_paper:hover {
+  box-shadow: 11px 11px 11px rgba(82, 79, 83, 0.2);
+  cursor: pointer !important;
+  transition: 1s !important;
+}

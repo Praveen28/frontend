@@ -1,0 +1,75 @@
+.login_icons {
+  margin-left: auto !important;
+  margin-top: auto !important;
+  font-size: 2rem !important;
+}
+
+.login_div {
+  position: relative;
+}
+
+.login_buttons {
+  flex-grow: 1;
+}
+
+.login_title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 0.3em !important;
+  font-size: 2rem !important;
+}
+
+.login_subtitle {
+  text-align: center;
+  color: white;
+  letter-spacing: 0.2em !important;
+}
+
+.add_button {
+  margin-top: -18px !important;
+  float: right;
+  font-size: 2rem !important;
+  background-color: white;
+  color: #ee2839;
+}
+
+.login_image {
+  width: 50vw;
+  height: 90vh;
+}
+
+.login_paper {
+  width: 90%;
+  margin-left: 3%;
+}
+
+.new_account {
+  text-align: center;
+  color: #ee2839;
+  cursor: pointer;
+}
+
+.newacc_modal {
+  width: 50% !important;
+  height: 70% ;
+  overflow-y: scroll;
+  position: absolute;
+  padding: 2% !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  outline: 0 !important;
+}
+
+@media (max-width: 960px) {
+  .login_div,
+  .login_image {
+    display: none;
+  }
+  .newacc_modal {
+    width: 90% !important;
+    padding: 2% !important;
+  }
+}
